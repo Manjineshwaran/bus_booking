@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Availability</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Seat Availability</h1>
+    </header>
+    <main>
+        <h2>Available Seats</h2>
+        <ul>
+            {% for seat in available_seats %}
+                <li>{{ seat }}</li>
+            {% empty %}
+                <p>No seats available</p>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>
